@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="rob" class="com.app.jatin.Repository">
+
+		<property name="entity">
+			<value>"Hello"</value>
+		</property>
+
+	</bean>
+
+	<bean id="sob" class="com.app.jatin.Service">
+
+		<property name="repo">
+			<ref bean = "rob"/>
+		</property>
+
+	</bean>
+
+</beans>

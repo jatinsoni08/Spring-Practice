@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="st" class="com.app.jatin.Student">
+
+        <property name="name" value="Jatin"/>
+
+        <property name="mobileno">
+            <list>
+                <value>9462580369</value>
+                <value>7976204531</value>
+            </list>
+        </property>
+
+        <property name="address">
+            <set>
+                <value>indore</value>
+                <value>jaipur</value>
+            </set>
+        </property>
+
+        <property name="courses">
+            <map>
+                <entry key="Java" value="12 month"/>
+            </map>
+        </property>
+
+    </bean>
+
+</beans>
