@@ -13,6 +13,8 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - ApplicationContext usage
 - Understanding IoC (Inversion of Control)
 
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/Spring-Core-XML-Configuration
+
 ---
 
 ### 2️⃣ Spring Core — Collection Type Dependency Injection
@@ -24,6 +26,8 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - Handling multiple values in a single bean
 - Using `<list>`, `<set>`, `<map>` tags
 
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_CollectionTypeDependencies
+
 ---
 
 ### 3️⃣ Spring Core — Reference Type Dependency Injection
@@ -32,6 +36,8 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - Understanding Has-A relationship
 - Using `<ref>` for bean linking
 - Building loosely coupled components
+
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_ReferenceTypeDependencies
 
 ---
 
@@ -49,7 +55,7 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - Dependency Injection (DI)
 - Spring Container
 - XML-based configuration
-- Collection & Reference dependencies
+- Collection and Reference type dependencies
 
 ---
 
@@ -73,4 +79,4 @@ This repository contains my structured learning of the **Spring Framework**, foc
 ## 🙏 Acknowledgment
 
 Grateful to **Prasoon Bidua Sir** and **REGex Software Services**  
-for providing clear concepts and practical learning approach.
+for providing clear concepts and a practical learning approach.
