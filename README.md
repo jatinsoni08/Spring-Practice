@@ -41,6 +41,28 @@ This repository contains my structured learning of the **Spring Framework**, foc
 
 ---
 
+### 4️⃣ Spring Core — @Component Annotation (Manual Container)
+
+- Creating beans using `@Component`
+- Custom and default bean naming
+- Injecting values using `@Value`
+- Manual container setup using `scan()` and `refresh()`
+
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringAnnotationConfig_Component
+
+---
+
+### 5️⃣ Spring Core — @ComponentScan (Base Package & Multi-Package)
+
+- Automatic bean detection using `@ComponentScan`
+- Base package vs sub-package scanning
+- Multi-package scanning using `basePackages`
+- Eliminating manual `scan()` and `refresh()`
+
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBasePackageDemo
+
+---
+
 ## 🧱 Technologies Used
 
 - Java 8
@@ -55,7 +77,9 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - Dependency Injection (DI)
 - Spring Container
 - XML-based configuration
-- Collection and Reference type dependencies
+- Annotation-based configuration
+- Component scanning
+- Bean lifecycle basics
 
 ---
 
@@ -64,15 +88,16 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - Step-by-step concept building
 - Practical implementation of each topic
 - Clean and structured project organization
+- Concept-first learning with real examples
 
 ---
 
 ## 📌 Future Scope
 
-- Bean lifecycle
-- Autowiring
-- Annotation-based configuration
-- Spring Boot
+- Bean lifecycle in depth
+- Autowiring (`@Autowired`, `@Qualifier`)
+- Java-based configuration
+- Spring Boot fundamentals
 
 ---
 
