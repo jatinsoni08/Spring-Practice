@@ -1,6 +1,6 @@
 # Spring Practice Repository
 
-This repository contains my structured learning of the **Spring Framework**, focusing on building strong fundamentals through hands-on projects.
+This repository contains my structured learning of the Spring Framework, focusing on building strong fundamentals through hands-on projects.
 
 ---
 
@@ -43,10 +43,10 @@ This repository contains my structured learning of the **Spring Framework**, foc
 
 ### 4️⃣ Spring Core — @Component Annotation (Manual Container)
 
-- Creating beans using `@Component`
+- Creating beans using @Component
 - Custom and default bean naming
-- Injecting values using `@Value`
-- Manual container setup using `scan()` and `refresh()`
+- Injecting values using @Value
+- Manual container setup using scan() and refresh()
 
 🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringAnnotationConfig_Component
 
@@ -54,12 +54,34 @@ This repository contains my structured learning of the **Spring Framework**, foc
 
 ### 5️⃣ Spring Core — @ComponentScan (Base Package & Multi-Package)
 
-- Automatic bean detection using `@ComponentScan`
+- Automatic bean detection using @ComponentScan
 - Base package vs sub-package scanning
-- Multi-package scanning using `basePackages`
-- Eliminating manual `scan()` and `refresh()`
+- Multi-package scanning using basePackages
+- Eliminating manual scan() and refresh()
 
 🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBasePackageDemo
+
+---
+
+### 6️⃣ Spring Core — @Autowired (Basic Dependency Injection)
+
+- Automatic injection using @Autowired
+- Bean-to-bean linking
+- HAS-A relationship implementation
+- Eliminating manual object creation
+
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/YOUR_AUTOWIRED_BASIC_FOLDER
+
+---
+
+### 7️⃣ Spring Core — @Autowired (Multiple Beans & Ambiguity)
+
+- Interface-based dependency injection
+- Multiple bean conflict scenario
+- Understanding ambiguity problem
+- Introduction to @Qualifier and @Primary
+
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/YOUR_AUTOWIRED_MULTIPLE_FOLDER
 
 ---
 
@@ -79,6 +101,7 @@ This repository contains my structured learning of the **Spring Framework**, foc
 - XML-based configuration
 - Annotation-based configuration
 - Component scanning
+- Autowiring (@Autowired)
 - Bean lifecycle basics
 
 ---
@@ -95,7 +118,7 @@ This repository contains my structured learning of the **Spring Framework**, foc
 ## 📌 Future Scope
 
 - Bean lifecycle in depth
-- Autowiring (`@Autowired`, `@Qualifier`)
+- Advanced Autowiring (@Qualifier, @Primary)
 - Java-based configuration
 - Spring Boot fundamentals
 
@@ -103,5 +126,4 @@ This repository contains my structured learning of the **Spring Framework**, foc
 
 ## 🙏 Acknowledgment
 
-Grateful to **Prasoon Bidua Sir** and **REGex Software Services**  
-for providing clear concepts and a practical learning approach.
+Learning becomes easier when concepts are explained practically — thanks to Prasoon Bidua Sir and REGex Software Services for that clarity.
