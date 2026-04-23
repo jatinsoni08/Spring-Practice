@@ -70,7 +70,7 @@ This repository contains my structured learning of the Spring Framework, focusin
 - HAS-A relationship implementation
 - Eliminating manual object creation
 
-🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/YOUR_AUTOWIRED_BASIC_FOLDER
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_AutoWiredBasic_EG
 
 ---
 
@@ -81,7 +81,7 @@ This repository contains my structured learning of the Spring Framework, focusin
 - Understanding ambiguity problem
 - Introduction to @Qualifier and @Primary
 
-🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/YOUR_AUTOWIRED_MULTIPLE_FOLDER
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_Autowired_Cases
 
 ---
 
