@@ -85,6 +85,18 @@ This repository contains my structured learning of the Spring Framework, focusin
 
 ---
 
+### 8️⃣ Spring Core — Manual Dependency Injection (Without Spring Container)
+
+- Dependency Injection without Spring XML or annotations
+- Programming to an interface (`Course`) for loose coupling
+- Setter Injection and Constructor Injection (manual)
+- Swapping implementations (`Java`, `SpringBootCourse`) without modifying consumer class
+- Foundation for understanding what Spring IoC automates
+
+🔗 https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_UnderstandingWithCoreJava
+
+---
+
 ## 🧱 Technologies Used
 
 - Java 8
@@ -102,6 +114,7 @@ This repository contains my structured learning of the Spring Framework, focusin
 - Annotation-based configuration
 - Component scanning
 - Autowiring (@Autowired)
+- Manual DI (Setter & Constructor)
 - Bean lifecycle basics
 
 ---
