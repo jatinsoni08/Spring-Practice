@@ -103,12 +103,15 @@ No changes needed inside `CodeXPrasoon` — that's the power of DI!
 
 ## 📁 Project Structure
 
-src/
-└── main/
-└── java/
-└── com/app/jatin2/
-├── Course.java # Interface
-├── Java.java # Implementation 1
-├── SpringBootCourse.java # Implementation 2
-├── CodeXPrasoon.java # Consumer class (has dependency)
-└── TestApp.java # Main class (wires everything)
+```
+SpringCore_UnderstandingWithCoreJava/
+└── src/
+    └── main/
+        └── java/
+            └── com/app/jatin2/
+                ├── Course.java               # Interface
+                ├── Java.java                 # Implementation 1
+                ├── SpringBootCourse.java     # Implementation 2
+                ├── CodeXPrasoon.java         # Consumer class (has dependency)
+                └── TestApp.java              # Main class (wires everything)
+```
