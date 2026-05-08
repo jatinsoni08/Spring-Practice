@@ -1,0 +1,21 @@
+# Conversion to YAML from Properties formar report
+# Warnings:
+# - The yaml file had comments which are lost in the refactoring!
+spring:
+  application:
+    name: 04SpringBootCoreInputEx-2
+my:
+  app:
+    id: 123
+    code: Sample
+    active: true
+    data:
+    - A
+    - B
+    - C
+    info:
+      C1: M1
+      C2: M2
+    pob:
+      pid: 20
+      pcode: MODEL
