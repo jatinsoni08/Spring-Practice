@@ -18,6 +18,7 @@ This repository covers:
 - Spring Boot Basics
 - External Configuration Handling
 - CommandLineRunner & Startup Logic
+- Spring Data JPA & Database Integration
 
 Each project is built step-by-step to strengthen real understanding of how Spring works internally.
 
@@ -208,11 +209,33 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreInputEx-2
 
 ---
 
+## 1️⃣3️⃣ Spring Boot — Data JPA with MySQL
+
+### 📌 Concepts Covered
+
+- Spring Data JPA integration
+- Entity mapping with `@Entity` and `@Table`
+- Field-to-column mapping using `@Id` and `@Column`
+- `CrudRepository` for built-in CRUD operations
+- Auto table creation with `ddl-auto=create`
+- MySQL datasource configuration
+- Lombok `@Data` for boilerplate reduction
+- `CommandLineRunner` to execute DB operations on startup
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_DataJPA_ProjectExample
+
+---
+
 # 🧱 Technologies Used
 
-- Java 8
+- Java 17
 - Spring Core
 - Spring Boot
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Lombok
 - Maven
 
 ---
@@ -231,6 +254,9 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreInputEx-2
 - External Configuration
 - YAML Configuration
 - Startup Runners
+- Spring Data JPA
+- Entity Mapping
+- Database Integration
 - Loose Coupling
 
 ---
