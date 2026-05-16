@@ -19,6 +19,7 @@ This repository covers:
 - External Configuration Handling
 - CommandLineRunner & Startup Logic
 - Spring Data JPA & Database Integration
+- Full CRUD Operations
 
 Each project is built step-by-step to strengthen real understanding of how Spring works internally.
 
@@ -227,6 +228,25 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_DataJPA_Proj
 
 ---
 
+## 1️⃣4️⃣ Spring Boot — Full CRUD Operations with Spring Data JPA
+
+### 📌 Concepts Covered
+
+- Complete CRUD — Insert, Fetch, Update, Delete
+- `saveAll()` for inserting multiple records
+- `findAll()` for fetching all records
+- `findById()` with `Optional` for null-safe fetch
+- `save()` for updating existing record
+- `deleteById()` for deleting by primary key
+- `ddl-auto=update` to persist data across runs
+- `format_sql=true` for formatted SQL in console
+- Lombok `@NoArgsConstructor` and `@AllArgsConstructor`
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringDATAJPA_EmployeeCRUDProject
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
@@ -257,6 +277,8 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_DataJPA_Proj
 - Spring Data JPA
 - Entity Mapping
 - Database Integration
+- Full CRUD Operations
+- Optional Handling
 - Loose Coupling
 
 ---
