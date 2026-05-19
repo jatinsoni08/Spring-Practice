@@ -1,4 +1,4 @@
-# 18May_SpringWebMVCProject_Basic — Spring Web MVC with Model & String View Name
+# SpringWebMVCProject_Basic — Spring Web MVC with Model & String View Name
 
 This project demonstrates a cleaner way of handling requests in Spring Web MVC — using **Model** object to pass data and returning **view name as String** directly from the Controller, instead of using `ModelAndView`.
 
