@@ -20,6 +20,7 @@ This repository covers:
 - CommandLineRunner & Startup Logic
 - Spring Data JPA & Database Integration
 - Full CRUD Operations
+- Spring Web MVC & Request Handling
 
 Each project is built step-by-step to strengthen real understanding of how Spring works internally.
 
@@ -247,14 +248,52 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringDATAJPA_EmployeeC
 
 ---
 
+## 1️⃣5️⃣ Spring Web MVC — ModelAndView with JSP
+
+### 📌 Concepts Covered
+
+- Spring Web MVC architecture overview
+- `DispatcherServlet` as Front Controller
+- `HandlerMapper` for request-to-controller mapping
+- `@Controller` annotation
+- `@GetMapping` for HTTP GET request mapping
+- `ModelAndView` — carries both data and view name
+- JSP View Resolver configuration
+- `spring.mvc.view.prefix` and `spring.mvc.view.suffix`
+- Jasper dependency for JSP support in embedded Tomcat
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_UsingMVC
+
+---
+
+## 1️⃣6️⃣ Spring Web MVC — Model with String View Name & JSP
+
+### 📌 Concepts Covered
+
+- `Model` object for passing data to view
+- Returning view name as `String` from Controller
+- Cleaner alternative to `ModelAndView`
+- Custom JSP page with CSS styling
+- View Resolver with custom prefix path `/WEB-INF/MyPages/`
+- JSP EL expression `${msg}` for rendering model data
+- Server port configuration
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/18May_SpringWebMVCProject_Basic
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
 - Spring Core
 - Spring Boot
+- Spring Web MVC
 - Spring Data JPA
 - Hibernate
 - MySQL
+- JSP
 - Lombok
 - Maven
 
@@ -280,6 +319,11 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringDATAJPA_EmployeeC
 - Full CRUD Operations
 - Optional Handling
 - Loose Coupling
+- Spring Web MVC Architecture
+- DispatcherServlet & Request Flow
+- ModelAndView & Model
+- JSP View Rendering
+- View Resolver Configuration
 
 ---
 
