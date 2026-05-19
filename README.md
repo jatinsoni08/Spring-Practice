@@ -280,7 +280,7 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_Us
 - Server port configuration
 
 🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/18May_SpringWebMVCProject_Basic
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVCProject_UsingString
 
 ---
 
