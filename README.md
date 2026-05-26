@@ -284,6 +284,27 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/18May_SpringWebMVCProje
 
 ---
 
+## 1️⃣7️⃣ Spring Web MVC — Model, Map & ModelMap for Data Transfer
+
+### 📌 Concepts Covered
+
+- `Model` interface — `addAttribute()` to pass key-value data to view
+- `Map<String, Object>` interface — `put()` to pass key-value data to view
+- `ModelMap` class — extends `LinkedHashMap`, `addAttribute()` to pass data
+- All three interchangeable — Spring injects `BindingAwareModelMap` internally
+- Passing single object to JSP using `model.addAttribute("obj", user)`
+- Passing multiple objects using `List<User>` to JSP
+- `<c:forEach>` JSTL tag to iterate and render list in JSP table
+- JSP EL expression `${key}` and `${obj.field}` for dynamic rendering
+- `@RequestMapping(value, method)` — class and method level URL mapping
+- Jasper + JSTL dependencies for JSP support
+- Lombok `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` on bean class
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Model_Map_ModelMap
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
