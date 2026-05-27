@@ -305,6 +305,26 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Model_Map_
 
 ---
 
+## 1️⃣8️⃣ Spring Web MVC — HTML Form Handling with @ModelAttribute
+
+### 📌 Concepts Covered
+
+- `@GetMapping` — loads HTML registration form on GET request
+- `@PostMapping` — handles form submission on POST request
+- `@ModelAttribute` — automatically binds HTML form fields to Java object
+- Form field `name` attribute must match Java model field name for auto-binding
+- `Model.addAttribute()` — passes bound object to success JSP page
+- `${empData.field}` — JSP EL expression to render employee data on success page
+- HTML form elements — `input`, `password`, `select`, `textarea`, `submit`
+- `form action="register" method="POST"` — triggers POST mapping
+- Jasper dependency for JSP support in embedded Tomcat
+- Lombok `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` on Employee model
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_EmployeeRegistrationForm
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
