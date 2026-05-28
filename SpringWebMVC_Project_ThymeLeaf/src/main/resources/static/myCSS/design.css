@@ -1,0 +1,15 @@
+/* design.css */
+
+body{
+    background-color: lightyellow;
+    font-family: Arial;
+}
+
+h2{
+    color: blue;
+}
+
+.mydesign{
+    color: red;
+    font-size: 20px;
+}

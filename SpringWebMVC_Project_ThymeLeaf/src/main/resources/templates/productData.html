@@ -1,0 +1,41 @@
+<!-- productData.html -->
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<title>WEB APP</title>
+
+	<!--To Link with CSS-->
+	<link rel="stylesheet" th:href="@{/myCSS/design.css}">
+
+	<!--To Link with js file-->
+	<script type="text/javascript" th:src="@{/myJS/javascript.js}"></script>
+
+</head>
+
+<body>
+
+	<h2>Welcome To SpringBoot + Thymeleaf</h2>
+
+	<p class="mydesign"> SAMPLE CSS </p>
+
+	<!-- Data Read -->
+
+	<p>
+		This is Product Id :
+		<span th:text="${pId}"></span>
+	</p>
+
+	<p>
+		This is Product Name :
+		<span th:text="${pName}"></span>
+	</p>
+
+	<p>
+		This is Product Price :
+		<span th:text="${pPrice}"></span>
+	</p>
+
+</body>
+</html>
