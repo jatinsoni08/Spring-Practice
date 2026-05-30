@@ -389,6 +389,25 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTPathVari
 
 ---
 
+## 2️⃣2️⃣ Spring Boot — @ResponseBody, @JsonProperty & @JsonIgnore in REST API
+
+### 📌 Concepts Covered
+
+- `@ResponseBody` — converts Java object to JSON and writes to HTTP response body
+- `@RequestBody` — converts JSON to Java object from HTTP request body
+- `@RestController` = `@Controller` + `@ResponseBody` — auto-applied to all methods
+- `@JsonProperty("custom-name")` — gives custom key name to field in JSON output
+- `@JsonIgnore` — excludes sensitive field (like password) from JSON response
+- Returning `Object`, `List<T>`, `Map<K,V>` from REST endpoints as JSON
+- `ResponseEntity<T>` — wraps response with body and HTTP status code
+- Jackson — auto-configured library handling all JSON conversions
+- Only JSON supported by default — XML needs extra dependency
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_ResponseBody
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
