@@ -371,6 +371,24 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTBasicPro
 
 ---
 
+## 2️⃣1️⃣ Spring Boot — REST API with @RequestParam, @PathVariable & ResponseEntity
+
+### 📌 Concepts Covered
+
+- `@RequestParam` — reads data from query string `?key=value`
+- `@PathVariable` — reads data from URL path segments `/{variable}`
+- Difference between `@RequestParam` and `@PathVariable` — when to use which
+- `ResponseEntity<T>` — full control over HTTP response body and status code
+- `HttpStatus.OK` — 200, `HttpStatus.CREATED` — 201, `HttpStatus.NOT_FOUND` — 404
+- `new ResponseEntity<>(body, HttpStatus)` — creating custom HTTP responses
+- `@RequestMapping` at class level + `@GetMapping` at method level
+- URL format difference — `/dataa?pid=10&pname=A` vs `/datab/10/A`
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTPathVariable_EG
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
