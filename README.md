@@ -408,6 +408,31 @@ https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_ResponseBody
 
 ---
 
+## 2️⃣3️⃣ Spring Security — Default Behavior, Session ID & CSRF Token
+
+### 📌 Concepts Covered
+
+- Spring Security default behavior — auto login form and auto-generated password
+- Custom credentials via `spring.security.user.name` and `spring.security.user.password`
+- `Authentication` — verifying identity (who you are)
+- `Authorization` — verifying permissions (what you can do)
+- Authenticated ≠ Authorized — key difference
+- Session ID — stateful communication between client and server
+- `JSESSIONID` stored in browser cookie — same per session
+- CSRF Token (Cross-Site Request Forgery) — different per request
+- GET requests accessible without CSRF token
+- POST, PUT, DELETE require CSRF token in request header
+- `HttpServletRequest.getSession().getId()` — exposing Session ID
+- `request.getAttribute("_csrf")` — exposing CSRF Token
+- `401 Unauthorized` vs `403 Forbidden` — difference explained
+- Basic Auth in Postman for testing secured REST APIs
+- 3 ways Spring resolves credentials — Config Class → application.properties → Console default
+
+🔗 Repository Link:  
+https://github.com/jatinsoni08/Spring-Practice/tree/main/01SpringSecurity-BaiscProject
+
+---
+
 # 🧱 Technologies Used
 
 - Java 17
