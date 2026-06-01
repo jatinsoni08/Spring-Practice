@@ -54,7 +54,7 @@ This is **not** a collection of copy-paste tutorials. This is a **battle-tested 
 |---|--------------|--------------|--------|
 | 01 | [XML Configuration](https://github.com/jatinsoni08/Spring-Practice/tree/main/Spring-Core-XML-Configuration) | Bean Creation, Setter Injection, IoC Container | ✅ Complete |
 | 02 | [Collection Injection](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_CollectionTypeDependencies) | List/Set/Map Injection, Complex Types | ✅ Complete |
-| 03 | [Reference Type DI](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_ReferenceTypeDependencies) | Bean-to-Bean Injection, Loose Coupling | ✅ Complete |
+| 03 | [Reference Type DI](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_RefernceceTypeDependecies) | Bean-to-Bean Injection, Loose Coupling | ✅ Complete |
 | 04 | [Annotation Config (Manual)](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringAnnotationConfig_Component) | @Component, @Value, Manual Container | ✅ Complete |
 | 05 | [Component Scanning](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBasePackageDemo) | @ComponentScan, Base Package Security | ✅ Complete |
 | 06 | [Autowired Basics](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_AutoWiredBasic_EG) | @Autowired, Dependency Resolution | ✅ Complete |
@@ -94,9 +94,8 @@ This is **not** a collection of copy-paste tutorials. This is a **battle-tested 
 |---|--------------|--------------|--------|
 | 15 | [MVC with ModelAndView](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_UsingMVC) | DispatcherServlet, HandlerMapping, JSP View Resolver | ✅ Complete |
 | 16 | [Model & String View](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVCProject_UsingString) | Model Object, Custom View Paths, JSP EL | ✅ Complete |
-| 17 | [Advanced Data Transfer](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Model_Map_ModelMap) | ModelMap, JSTL <c:forEach>, List Rendering | ✅ Complete |
-| 18 | [Form Handling](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_EmployeeRegistrationForm) | @ModelAttribute, Form Binding, Validation | ✅ Complete |
-| 19 | [Thymeleaf Integration](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_ThymeLeaf) | Thymeleaf Engine, Static Resources, Security | ✅ Complete |
+| 17 | [Advanced Data Transfer](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_Model_Map_ModelMap) | ModelMap, JSTL <c:forEach>, List Rendering | ✅ Complete |
+| 18 | [Thymeleaf Integration](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_ThymeLeaf) | Thymeleaf Engine, Static Resources, Security | ✅ Complete |
 
 ---
 
@@ -105,10 +104,10 @@ This is **not** a collection of copy-paste tutorials. This is a **battle-tested 
 
 | # | Project Name | Key Concepts | Status |
 |---|--------------|--------------|--------|
-| 20 | [REST Basics](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTBasicProject) | @RestController, JSON Serialization, Postman | ✅ Complete |
-| 21 | [Advanced REST](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTPathVariable_EG) | @PathVariable, @RequestParam, ResponseEntity | ✅ Complete |
-| 22 | [JSON Control](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_ResponseBody) | @JsonProperty, @JsonIgnore, Custom Responses | ✅ Complete |
-| 23 | [Spring Security](https://github.com/jatinsoni08/Spring-Practice/tree/main/01SpringSecurity-BaiscProject) | Authentication, Authorization, CSRF, Session ID | ✅ Complete |
+| 19 | [REST Basics](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTBasicProject) | @RestController, JSON Serialization, Postman | ✅ Complete |
+| 20 | [Advanced REST](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTPathVaribale_EG) | @PathVariable, @RequestParam, ResponseEntity | ✅ Complete |
+| 21 | [JSON Control](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_ResponseBody) | @JsonProperty, @JsonIgnore, Custom Responses | ✅ Complete |
+| 22 | [Spring Security](https://github.com/jatinsoni08/Spring-Practice/tree/main/01SpringSecurity-BaiscProject) | Authentication, Authorization, CSRF, Session ID | ✅ Complete |
 
 ---
 
