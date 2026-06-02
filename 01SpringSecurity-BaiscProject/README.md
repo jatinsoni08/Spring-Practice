@@ -1,22 +1,29 @@
-# 01SpringSecurity-BaiscProject — Spring Security Basics, Session ID, CSRF Token & Authentication vs Authorization
+# 01SpringSecurityProject — Spring Security: Default Behavior + Custom Configuration + In-Memory Authentication
 
-This project is the **first hands-on introduction to Spring Security** — demonstrating what happens the moment you add the security dependency, how Spring secures your entire application by default, what Session IDs are, why CSRF tokens exist, and the most misunderstood concept in security — the difference between **Authentication** and **Authorization**.
+This project covers **3 sessions of Spring Security** — from understanding default behavior to writing a custom `SecurityConfiguration` class with multiple in-memory users, stateless sessions, and disabled CSRF protection.
 
 ---
 
 ## 🚀 Project Overview
 
-A Spring Boot REST API application where:
+### Session 1 & 2 — Default Behavior
 
-- REST endpoints created for GET and POST operations on `Employee` data
-- Application runs **without** Spring Security first — all endpoints freely accessible
-- Spring Security dependency added — **auto login form + auto-generated password** triggered immediately
-- Custom credentials configured in `application.properties`
-- Session ID exposed via `HttpServletRequest` to prove **stateful behavior**
-- CSRF Token exposed via dedicated endpoint to understand its generation
-- POST request **fails with 401** without CSRF token in header
-- POST request **succeeds with 200** after passing CSRF token in `X-CSRF-TOKEN` header
-- All APIs tested using **Postman** with Basic Auth
+- REST endpoints created for Employee GET and POST
+- Spring Security dependency added → **auto login form + auto-generated password**
+- Session ID demonstrated via `HttpServletRequest` → proves **Stateful** behavior
+- CSRF Token exposed and passed in Postman header for POST requests
+- Custom credentials set via `application.properties`
+
+### Session 3 — Custom Security Configuration
+
+- Custom `SecurityConfiguration` class written with `@Configuration` + `@EnableWebSecurity`
+- CSRF protection **disabled** → POST requests work without CSRF token
+- HTTP Basic Auth **enabled** → Postman can access APIs directly
+- Session management set to **STATELESS** → no session stored on server
+- Two **in-memory users** hardcoded with different roles:
+  - `jatin` / `hello` → **ADMIN**
+  - `prasson` / `bidua` → **USER**
+- Old `application.properties` credentials no longer work → custom config takes priority
 
 ---
 
@@ -36,11 +43,13 @@ A Spring Boot REST API application where:
 
 ```
 src/main/java/com/app/
-├── Application.java                         # Spring Boot main entry point
+├── Application.java
 ├── model/
 │   └── Employee.java                        # Employee model with Lombok
-└── restcontroller/
-    └── EmployeeRestController.java          # REST Controller — 5 endpoints
+├── restcontroller/
+│   └── EmployeeRestController.java          # REST Controller — 5 endpoints
+└── config/
+    └── SecurityConfiguration.java           # Custom Security Config (Session 3)
 ```
 
 ---
@@ -50,12 +59,13 @@ src/main/java/com/app/
 ```properties
 spring.application.name=01SpringSecurityProject
 
-spring.security.user.name=jatin
-spring.security.user.password=jatin123
+# These are overridden by SecurityConfiguration class
+# spring.security.user.name=jatin
+# spring.security.user.password=jatin123
 ```
 
-> Without these → Spring auto-generates password on console every restart (changes each time)
-> With these → use `jatin` / `jatin123` to authenticate via Basic Auth in Postman
+> Once `SecurityConfiguration` class is present with `@Configuration` + `@EnableWebSecurity`,
+> Spring ignores `application.properties` credentials and uses the config class instead.
 
 ---
 
@@ -76,7 +86,7 @@ public class Employee {
 
 ---
 
-### 🔹 EmployeeRestController.java — 5 Endpoints
+### 🔹 EmployeeRestController.java
 
 ```java
 @RestController
@@ -88,32 +98,25 @@ public class EmployeeRestController {
         new Employee(1, "BePositive", "Kota")
     ));
 
-    // GET — fetch all employees as JSON
     @GetMapping("/get-employee")
-    public List<Employee> getAllEmployee() {
-        return list;
-    }
+    public List<Employee> getAllEmployee() { return list; }
 
-    // POST — add new employee (requires CSRF token in header)
     @PostMapping("/add-employee")
     public void addEmployee(@RequestBody Employee employee) {
         list.add(employee);
         System.out.println(list);
     }
 
-    // GET — returns Session ID with response (proves STATEFUL behavior)
     @GetMapping("/get-info")
     public String getCourseInfo(HttpServletRequest request) {
         return "Jatin Soni JAVA Course" + request.getSession().getId();
     }
 
-    // GET — returns Session ID (SAME as /get-info = confirms STATEFUL)
     @GetMapping("/get-moreinfo")
     public String getCourseMoreInfo(HttpServletRequest request) {
         return "Its a 10 month course" + request.getSession().getId();
     }
 
-    // GET — exposes CSRF Token for use in POST/PUT/DELETE header
     @GetMapping("/get-csrf")
     public CsrfToken getCsrfToken(HttpServletRequest request) {
         return (CsrfToken) request.getAttribute("_csrf");
@@ -123,143 +126,174 @@ public class EmployeeRestController {
 
 ---
 
-## 💡 Key Concepts Covered
+### 🔹 SecurityConfiguration.java (Session 3 — Key File)
 
-### 🔹 Spring Security Default Behavior
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
 
-When `spring-boot-starter-security` is added:
+    /**
+     * Configure Spring Security settings
+     */
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-- **Entire application is secured automatically** — zero configuration needed
-- A **default login form** appears for every endpoint
-- An **auto-generated password** is printed on console on every server restart
-- Default username is `user` — override via `application.properties`
-- Spring checks credentials in this order:
-  1. Custom `@Configuration` class with `@EnableWebSecurity`
-  2. `application.properties` — `spring.security.user.name` + `spring.security.user.password`
-  3. Console default — auto-generated password
+        // Disable CSRF protection
+        // Useful for REST APIs accessed through Postman, mobile apps, or frontend applications.
+        http.csrf(csrf -> csrf.disable());
+
+        // Enable HTTP Basic Authentication
+        // Username and password will be sent in request headers.
+        http.httpBasic(Customizer.withDefaults());
+
+        // Make the application stateless
+        // Spring Security will not create or use HTTP sessions.
+        http.sessionManagement(session ->
+            session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+
+        // Require authentication for every request
+        http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
+
+        return http.build();
+    }
+
+    /**
+     * In-Memory User Configuration
+     * Users are stored in application memory.
+     * Mainly used for testing and learning purposes.
+     */
+    @Bean
+    public UserDetailsService userDetailsService() {
+
+        // Admin user
+        UserDetails admin = User.withDefaultPasswordEncoder()
+                .username("jatin")
+                .password("hello")
+                .roles("ADMIN")
+                .build();
+
+        // Normal user
+        UserDetails user = User.withDefaultPasswordEncoder()
+                .username("prasson")
+                .password("bidua")
+                .roles("USER")
+                .build();
+
+        return new InMemoryUserDetailsManager(admin, user);
+    }
+}
+```
 
 ---
+
+## 💡 Key Concepts Covered
+
+### 🔹 Spring Security Priority Order
+
+Spring checks credentials in this order:
+
+```
+1. @Configuration class with @EnableWebSecurity  ← HIGHEST PRIORITY
+2. application.properties (spring.security.user.*)
+3. Console auto-generated password               ← LOWEST PRIORITY
+```
+
+> Once custom config class is present → `application.properties` credentials are **ignored**
+
+### 🔹 What SecurityFilterChain Does
+
+| Configuration                               | Effect                                           |
+| ------------------------------------------- | ------------------------------------------------ |
+| `http.csrf(csrf -> csrf.disable())`         | CSRF token not required for POST/PUT/DELETE      |
+| `http.httpBasic(Customizer.withDefaults())` | Basic Auth via Postman/frontend works            |
+| `SessionCreationPolicy.STATELESS`           | No session stored — every request is independent |
+| `auth.anyRequest().authenticated()`         | Every endpoint requires authentication           |
+
+### 🔹 In-Memory Authentication vs DAO Authentication
+
+| Type                   | When to Use                   | Storage               |
+| ---------------------- | ----------------------------- | --------------------- |
+| **In-Memory**          | Small apps, testing, learning | RAM — lost on restart |
+| **DAO Authentication** | Production, scalable apps     | Database              |
+
+### 🔹 Stateful vs Stateless
+
+| Stateful (Session 1 & 2)                     | Stateless (Session 3)           |
+| -------------------------------------------- | ------------------------------- |
+| Server stores session (JSESSIONID in cookie) | Server stores nothing           |
+| Same Session ID across requests              | Every request is treated as new |
+| Security risk if Session ID stolen           | Safer — no session to steal     |
+| Traditional web apps                         | REST APIs, JWT-based apps       |
 
 ### 🔹 Authentication vs Authorization
 
-| Term               | Meaning                               | Real World Example                   |
-| ------------------ | ------------------------------------- | ------------------------------------ |
-| **Authentication** | Who are you? — Verify identity        | Login with username + password       |
-| **Authorization**  | What can you do? — Verify permissions | Admin can delete, User can only read |
+| Term               | Meaning                                              |
+| ------------------ | ---------------------------------------------------- |
+| **Authentication** | Who are you? → verify identity via username/password |
+| **Authorization**  | What can you do? → verify role/permissions           |
 
-> **Key Rule: Authenticated ≠ Authorized**
-
-**Hotel analogy from lecture:**
-
-- Rahul books a room → provides Booking ID + Aadhaar + OTP → **Authenticated** → gets room key
-- Rahul tries gym → guard checks ID → gym needs extra payment → **Authenticated but NOT Authorized**
-- Same concept in Spring: A user with valid credentials can be blocked from specific resources based on role
-
----
-
-### 🔹 Session ID — Stateful Communication
-
-```
-Client → sends request → Server
-Server → generates Session ID (JSESSIONID) → sends back in response cookie
-Browser → stores Session ID in cookie
-Next request → Session ID sent automatically → Server recognizes same user → STATEFUL
-```
-
-**Proof from code:**
-
-```
-GET /get-info     → "Jatin Soni JAVA Course  DF9A3C7B..."
-GET /get-moreinfo → "Its a 10 month course   DF9A3C7B..."
-                                              ↑ SAME Session ID = STATEFUL
-```
-
-**Risk:** If attacker steals Session ID → can access all protected resources
-
----
-
-### 🔹 CSRF Token — Cross-Site Request Forgery Protection
-
-| HTTP Method | Session ID Sufficient? | CSRF Token Required? |
-| ----------- | ---------------------- | -------------------- |
-| GET         | ✔ Yes                  | ✘ No                 |
-| POST        | ✔ Yes                  | ✔ Yes                |
-| PUT         | ✔ Yes                  | ✔ Yes                |
-| DELETE      | ✔ Yes                  | ✔ Yes                |
-
-**How CSRF Token works:**
-
-- Generated **server-side** internally by Spring Security
-- **Different every request** — unlike Session ID which stays same per session
-- Must be passed in request **header** as `X-CSRF-TOKEN` for POST/PUT/DELETE
-- Even if attacker steals Session ID → **cannot modify data** without CSRF Token
-
-**From Postman screenshots:**
-
-- POST without CSRF token → `401 Unauthorized`
-- POST with `X-CSRF-TOKEN` in header → `200 OK` ✔
-- Cookie shows `JSESSIONID=7769BFD5261A4C1CC5E04B...`
-
----
-
-### 🔹 401 vs 403
-
-| Status Code        | Meaning                          | Cause                                           |
-| ------------------ | -------------------------------- | ----------------------------------------------- |
-| `401 Unauthorized` | Authentication failed or missing | Wrong/missing credentials or missing CSRF token |
-| `403 Forbidden`    | Authenticated but not authorized | Valid user but no permission for that resource  |
+> `jatin` with role `ADMIN` → authenticated ✔ + authorized for all resources
+> `prasson` with role `USER` → authenticated ✔ + limited authorization (role-based access in future sessions)
 
 ---
 
 ## 🔗 API Endpoints
 
-| URL                           | Method | Auth         | CSRF       | Description                                        |
-| ----------------------------- | ------ | ------------ | ---------- | -------------------------------------------------- |
-| `localhost:8080/get-employee` | GET    | ✔ Basic Auth | ✘          | Returns employee list as JSON — **200 OK**         |
-| `localhost:8080/add-employee` | POST   | ✔ Basic Auth | ✔ Required | Adds employee — **401** without CSRF, **200** with |
-| `localhost:8080/get-info`     | GET    | ✔ Basic Auth | ✘          | Returns course info + Session ID                   |
-| `localhost:8080/get-moreinfo` | GET    | ✔ Basic Auth | ✘          | Returns more info + **same** Session ID            |
-| `localhost:8080/get-csrf`     | GET    | ✔ Basic Auth | ✘          | Returns CSRF Token to use in POST header           |
+| URL                           | Method | Description                                        |
+| ----------------------------- | ------ | -------------------------------------------------- |
+| `localhost:8080/get-employee` | GET    | Returns employee list as JSON                      |
+| `localhost:8080/add-employee` | POST   | Adds new employee (no CSRF needed after Session 3) |
+| `localhost:8080/get-info`     | GET    | Returns course info + Session ID                   |
+| `localhost:8080/get-moreinfo` | GET    | Returns more info + Session ID                     |
+| `localhost:8080/get-csrf`     | GET    | Returns CSRF Token object                          |
 
 ---
 
-## ▶️ How to Run & Test
+## 🧪 Postman Testing Results
+
+**Wrong credentials → 401 Unauthorized:**
+
+```
+Username: jatin | Password: jatin  → 401 Unauthorized ❌
+```
+
+**Correct ADMIN credentials → 200 OK:**
+
+```
+Username: jatin | Password: hello  → 200 OK ✔
+```
+
+**Correct USER credentials → 200 OK:**
+
+```
+Username: prasson | Password: bidua → 200 OK ✔
+```
+
+**Old application.properties credentials → 401 Unauthorized:**
+
+```
+Username: jatin | Password: jatin123 → 401 Unauthorized ❌
+(overridden by SecurityConfiguration class)
+```
+
+---
+
+## ▶️ How to Run
 
 1. Clone the repository
 2. Open in STS / IntelliJ / Eclipse
 3. Run as Spring Boot Application
-4. Open **Postman** → Authorization → **Basic Auth**
-5. Username: `jatin` | Password: `jatin123`
-
-**Step-by-step Postman flow:**
-
-```
-Step 1: GET /get-employee        → verify data returns (200 OK)
-Step 2: GET /get-csrf            → copy the token value
-Step 3: POST /add-employee
-        Headers → X-CSRF-TOKEN: [paste token]
-        Body → raw JSON: {"empId":4,"empName":"Anubhav","empCity":"Pali"}
-        → 200 OK ✔
-Step 4: GET /get-info            → note Session ID
-Step 5: GET /get-moreinfo        → same Session ID confirms STATEFUL
-```
+4. Open Postman → Authorization → Basic Auth
+5. Use: `jatin` / `hello` (ADMIN) or `prasson` / `bidua` (USER)
+6. Test all endpoints
 
 ---
 
-## 🧪 Expected Output
+## 📌 Sessions Covered
 
-**GET `/get-employee` → 200 OK (with Basic Auth: jatin/jatin123):**
-
-```json
-[
-  { "empId": 1, "empName": "Jatin", "empCity": "Jaipur" },
-  { "empId": 2, "empName": "Sumit", "empCity": "Indore" },
-  { "empId": 1, "empName": "BePositive", "empCity": "Kota" }
-]
-```
-
-**POST `/add-employee` without CSRF → 401 Unauthorized**
-
-**POST `/add-employee` with X-CSRF-TOKEN header → 200 OK**
-
-**GET `/get-info` and `/get-moreinfo` → same JSESSIONID confirms stateful session**
+| Session   | Topic                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------- |
+| Session 1 | REST APIs without Spring Security — free access                                               |
+| Session 2 | Default Spring Security — login form, CSRF token, Session ID, Authentication vs Authorization |
+| Session 3 | Custom SecurityConfiguration — disable CSRF, stateless, in-memory multi-user auth             |
