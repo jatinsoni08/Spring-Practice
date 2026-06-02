@@ -1,499 +1,167 @@
-# Spring Practice Repository
+<!-- 
+  🚀 SPRING FRAMEWORK MASTERY REPOSITORY
+  Built with ❤️ by Jatin Soni
+  Licensed under MIT
+-->
 
-This repository contains my structured hands-on learning journey of the Spring Framework and Spring Boot, focused on understanding core concepts through practical implementations and mini-projects.
+<div align="center">
+
+# 🌟 SPRING FRAMEWORK MASTERY JOURNAL
+
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen?style=for-the-badge&logo=spring-boot)](https://spring.io/projects/spring-boot)
+[![Spring Framework](https://img.shields.io/badge/Spring%20Framework-6.1.0-brightgreen?style=for-the-badge&logo=spring)](https://spring.io/projects/spring-framework)
+[![Java](https://img.shields.io/badge/Java-17-red?style=for-the-badge&logo=openjdk)](https://openjdk.java.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql)](https://www.mysql.com/)
+[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-red?style=for-the-badge&logo=hibernate)](https://hibernate.org/)
+[![Maven](https://img.shields.io/badge/Maven-C32127?style=for-the-badge&logo=apache-maven&logo=white)](https://maven.apache.org/)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge)](mailto:jatinsoni08@example.com)
+
+> **"Building Enterprise-Grade Applications One Bean at a Time"**
+> 
+> A structured, hands-on journey through the depths of the Spring Ecosystem. 
+> From raw IoC containers to secure REST APIs, this repository documents the complete mastery path.
+
+[📜 Repository Overview](#-repository-overview) | [📂 Project Catalog](#-project-catalog) | [🛠️ Tech Stack](#-technologies-used) | [🧠 Learning Path](#-learning-approach)
+
+</div>
 
 ---
 
 ## 🚀 Repository Overview
 
-This repository covers:
+This is **not** a collection of copy-paste tutorials. This is a **battle-tested laboratory** where every concept of the Spring Framework is dissected, implemented, and mastered from scratch.
 
-- Spring Core Fundamentals
-- Dependency Injection (DI)
-- Inversion of Control (IoC)
-- XML-Based Configuration
-- Annotation-Based Configuration
-- Component Scanning
-- Autowiring
-- Spring Boot Basics
-- External Configuration Handling
-- CommandLineRunner & Startup Logic
-- Spring Data JPA & Database Integration
-- Full CRUD Operations
-- Spring Web MVC & Request Handling
-- Thymeleaf UI Engine
-- REST API Development
+### 🔥 What You Will Find Here:
+- 🧱 **Core Fundamentals**: Deep dive into IoC, DI, and Bean Lifecycle (XML & Annotation-free initially to understand the magic).
+- 🤖 **Spring Boot Automation**: Mastering auto-configuration, starters, and production-ready setups.
+- 💾 **Data Persistence**: Full-scale JPA, Hibernate, and MySQL integration with complex CRUD operations.
+- 🌐 **Web & REST**: Building secure, scalable MVC applications and RESTful APIs.
+- 🔒 **Security**: Implementing Authentication, Authorization, CSRF protection, and Session Management.
 
-Each project is built step-by-step to strengthen real understanding of how Spring works internally.
+> ⚠️ **WARNING**: This repository contains intense code implementations. 
+> Viewing this content may cause sudden increases in backend engineering skills and employability.
 
 ---
 
-# 📂 Projects
+## 📂 Project Catalog
+
+### 🏗️ Phase 1: Spring Core & Container Internals
+*Understanding the magic behind the curtain. Manual implementation before automation.*
+
+| # | Project Name | Key Concepts | Status |
+|---|--------------|--------------|--------|
+| 01 | [XML Configuration](https://github.com/jatinsoni08/Spring-Practice/tree/main/Spring-Core-XML-Configuration) | Bean Creation, Setter Injection, IoC Container | ✅ Complete |
+| 02 | [Collection Injection](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_CollectionTypeDependencies) | List/Set/Map Injection, Complex Types | ✅ Complete |
+| 03 | [Reference Type DI](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_RefernceceTypeDependecies) | Bean-to-Bean Injection, Loose Coupling | ✅ Complete |
+| 04 | [Annotation Config (Manual)](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringAnnotationConfig_Component) | @Component, @Value, Manual Container | ✅ Complete |
+| 05 | [Component Scanning](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBasePackageDemo) | @ComponentScan, Base Package Security | ✅ Complete |
+| 06 | [Autowired Basics](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_AutoWiredBasic_EG) | @Autowired, Dependency Resolution | ✅ Complete |
+| 07 | [Conflict Resolution](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_Autowired_Cases) | @Qualifier, @Primary, Ambiguity Handling | ✅ Complete |
+| 08 | [Manual DI (Core Java)](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_UnderstandingWithCoreJava) | **No Spring**: Manual DI, Interface Programming | ✅ Complete |
 
 ---
 
-## 1️⃣ Spring Core — XML Configuration
+### 🚀 Phase 2: Spring Boot & Automation
+*Leveraging the power of convention over configuration.*
 
-### 📌 Concepts Covered
-
-- Bean creation using XML
-- Setter Injection
-- ApplicationContext usage
-- Understanding IoC Container
-- Dependency Injection basics
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/Spring-Core-XML-Configuration
+| # | Project Name | Key Concepts | Status |
+|---|--------------|--------------|--------|
+| 09 | [Startup Runners](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreRunnersEx) | CommandLineRunner, @Order, Startup Logic | ✅ Complete |
+| 10 | [Config Properties](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreConfigPropsEx) | @ConfigurationProperties, Type-safe Config | ✅ Complete |
+| 11 | [Property Binding](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreInputEx-1) | Custom Properties, POJO Binding | ✅ Complete |
+| 12 | [YAML Configuration](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreInputEx-2) | application.yml, Hierarchical Config | ✅ Complete |
 
 ---
 
-## 2️⃣ Spring Core — Collection Type Dependency Injection
+### 💾 Phase 3: Data Persistence & JPA
+*Mastering database interactions with Spring Data JPA and Hibernate.*
 
-### 📌 Concepts Covered
+| # | Project Name | Key Concepts | Status |
+|---|--------------|--------------|--------|
+| 13 | [JPA Integration](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_DataJPA_ProjectExample) | @Entity, @Table, ddl-auto, MySQL DataSource | ✅ Complete |
+| 14 | [Full CRUD Operations](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringDATAJPA_EmployeeCRUDProject) | saveAll, findById, Optional, Transaction Management | ✅ Complete |
 
-- Injecting collections using XML
-- List Injection
-- Set Injection
-- Map Injection
-- Handling multiple values inside beans
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_CollectionTypeDependencies
+> 💡 **Note**: These projects demonstrate safe SQL practices, entity mapping, and the use of Lombok for boilerplate reduction.
 
 ---
 
-## 3️⃣ Spring Core — Reference Type Dependency Injection
+### 🌐 Phase 4: Web MVC & View Engines
+*Building dynamic web applications with JSP and Thymeleaf.*
 
-### 📌 Concepts Covered
-
-- Bean-to-bean injection
-- HAS-A relationship
-- Using `<ref>` tag
-- Loose coupling concepts
-- Object dependency management
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_ReferenceTypeDependencies
+| # | Project Name | Key Concepts | Status |
+|---|--------------|--------------|--------|
+| 15 | [MVC with ModelAndView](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_UsingMVC) | DispatcherServlet, HandlerMapping, JSP View Resolver | ✅ Complete |
+| 16 | [Model & String View](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVCProject_UsingString) | Model Object, Custom View Paths, JSP EL | ✅ Complete |
+| 17 | [Advanced Data Transfer](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_Model_Map_ModelMap) | ModelMap, JSTL <c:forEach>, List Rendering | ✅ Complete |
+| 18 | [Thymeleaf Integration](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_ThymeLeaf) | Thymeleaf Engine, Static Resources, Security | ✅ Complete |
 
 ---
 
-## 4️⃣ Spring Core — @Component Annotation (Manual Container)
+### 🔒 Phase 5: REST APIs & Security
+*Building and securing enterprise-grade microservices.*
 
-### 📌 Concepts Covered
-
-- Bean creation using `@Component`
-- Default and custom bean naming
-- `@Value` annotation
-- Manual container initialization
-- Using `scan()` and `refresh()`
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringAnnotationConfig_Component
+| # | Project Name | Key Concepts | Status |
+|---|--------------|--------------|--------|
+| 19 | [REST Basics](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTBasicProject) | @RestController, JSON Serialization, Postman | ✅ Complete |
+| 20 | [Advanced REST](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTPathVaribale_EG) | @PathVariable, @RequestParam, ResponseEntity | ✅ Complete |
+| 21 | [JSON Control](https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_ResponseBody) | @JsonProperty, @JsonIgnore, Custom Responses | ✅ Complete |
+| 22 | [Spring Security](https://github.com/jatinsoni08/Spring-Practice/tree/main/01SpringSecurity-BaiscProject) | Authentication, Authorization, CSRF, Session ID | ✅ Complete |
 
 ---
 
-## 5️⃣ Spring Core — @ComponentScan (Base Package & Multi-Package)
+## 🛠️ Technologies Used
 
-### 📌 Concepts Covered
+<div align="center">
 
-- Automatic bean scanning
-- Base package scanning
-- Multi-package scanning
-- Eliminating manual scanning
-- Configuration-based container setup
+[![Java](https://img.shields.io/badge/Java-17-red?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.java.net/)
+[![Spring](https://img.shields.io/badge/Spring%20Framework-6.1.0-brightgreen?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Spring Security](https://img.shields.io/badge/Spring%20Security-6.2.0-brightgreen?style=for-the-badge&logo=spring-security&logoColor=white)](https://spring.io/projects/spring-security)
+[![Spring Data JPA](https://img.shields.io/badge/Spring%2Data%2AJPA-3.2.0-brightgreen?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-data-jpa)
+[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-red?style=for-the-badge&logo=hibernate&logoColor=white)](https://hibernate.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Maven](https://img.shields.io/badge/Maven-C32127?style=for-the-badge&logo=apache-maven&logo=white)](https://maven.apache.org/)
+[![Lombok](https://img.shields.io/badge/Lombok-1.18.30-blue?style=for-the-badge&logo=java&logoColor=white)](https://projectlombok.org/)
 
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBasePackageDemo
-
----
-
-## 6️⃣ Spring Core — @Autowired (Basic Dependency Injection)
-
-### 📌 Concepts Covered
-
-- Automatic dependency injection
-- `@Autowired` basics
-- Bean linking
-- HAS-A relationship
-- Spring-managed object creation
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_AutoWiredBasic_EG
+</div>
 
 ---
 
-## 7️⃣ Spring Core — @Autowired (Multiple Beans & Ambiguity)
+## 🧠 Learning Approach
 
-### 📌 Concepts Covered
+This repository follows a **Concept-First, Implementation-Second** methodology:
 
-- Interface-based injection
-- Multiple bean conflict
-- Ambiguity problem
-- Introduction to `@Qualifier`
-- Introduction to `@Primary`
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_Autowired_Cases
+1.  **🔍 Deep Dive**: Understanding the "Why" and "How" before the "What".
+2.  **🧱 Manual Implementation**: Building things manually (e.g., Manual DI) to appreciate the automation.
+3.  **🤖 Automation**: Leveraging Spring Boot's power only after understanding the underlying mechanics.
+4.  **🛡️ Security First**: Integrating security practices from the ground up.
+5.  **📈 Real-World Scenarios**: Projects mimic actual industry challenges and requirements.
 
 ---
 
-## 8️⃣ Spring Core — Manual Dependency Injection (Without Spring Container)
+## 🙏 Acknowledgment & Credits
 
-### 📌 Concepts Covered
-
-- Manual Dependency Injection
-- Programming to interfaces
-- Setter Injection
-- Constructor Injection
-- Loose coupling without Spring
-- Understanding what Spring automates internally
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringCore_UnderstandingWithCoreJava
+Special thanks to **Prasoon Bidua Sir** and **REGex Software Services** for providing the mentorship and industry-oriented guidance that made this practical learning journey possible. Their approach to making complex concepts understandable is unparalleled.
 
 ---
 
-## 9️⃣ Spring Boot — CommandLineRunner & @Order
+<div align="center">
 
-### 📌 Concepts Covered
+### 🌟 Ready to Build Something Great?
 
-- `CommandLineRunner`
-- Startup execution logic
-- Multiple runner classes
-- `@Order` annotation
-- Automatic execution after application startup
+This repository is a testament to the power of structured learning and practical implementation. 
+Feel free to explore, clone, and learn from the code. 
 
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreRunnersEx
+**If this repository helped you, please ⭐ Star this repository to support the community!**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Follow%20Me-blue?style=for-the-badge&logo=github)](https://github.com/jatinsoni08)
 
 ---
 
-## 🔟 Spring Boot — @ConfigurationProperties
+*Built with ❤️ and lots of ☕ by Jatin Soni*
 
-### 📌 Concepts Covered
+*© 2024 Spring Practice Repository. Licensed under MIT.*
 
-- External configuration handling
-- `application.properties`
-- `@ConfigurationProperties`
-- Automatic property binding
-- Configuration bean creation
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreConfigPropsEx
-
----
-
-## 1️⃣1️⃣ Spring Boot — Reading Input from application.properties
-
-### 📌 Concepts Covered
-
-- Reading custom properties
-- POJO binding
-- Externalized configuration
-- Bean injection
-- Property mapping
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreInputEx-1
-
----
-
-## 1️⃣2️⃣ Spring Boot — YAML Configuration & Input Handling
-
-### 📌 Concepts Covered
-
-- `application.yml`
-- YAML structure
-- Hierarchical configuration
-- Property binding
-- Spring Boot configuration management
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBootCoreInputEx-2
-
----
-
-## 1️⃣3️⃣ Spring Boot — Data JPA with MySQL
-
-### 📌 Concepts Covered
-
-- Spring Data JPA integration
-- Entity mapping with `@Entity` and `@Table`
-- Field-to-column mapping using `@Id` and `@Column`
-- `CrudRepository` for built-in CRUD operations
-- Auto table creation with `ddl-auto=create`
-- MySQL datasource configuration
-- Lombok `@Data` for boilerplate reduction
-- `CommandLineRunner` to execute DB operations on startup
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_DataJPA_ProjectExample
-
----
-
-## 1️⃣4️⃣ Spring Boot — Full CRUD Operations with Spring Data JPA
-
-### 📌 Concepts Covered
-
-- Complete CRUD — Insert, Fetch, Update, Delete
-- `saveAll()` for inserting multiple records
-- `findAll()` for fetching all records
-- `findById()` with `Optional` for null-safe fetch
-- `save()` for updating existing record
-- `deleteById()` for deleting by primary key
-- `ddl-auto=update` to persist data across runs
-- `format_sql=true` for formatted SQL in console
-- Lombok `@NoArgsConstructor` and `@AllArgsConstructor`
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringDATAJPA_EmployeeCRUDProject
-
----
-
-## 1️⃣5️⃣ Spring Web MVC — ModelAndView with JSP
-
-### 📌 Concepts Covered
-
-- Spring Web MVC architecture overview
-- `DispatcherServlet` as Front Controller
-- `HandlerMapper` for request-to-controller mapping
-- `@Controller` annotation
-- `@GetMapping` for HTTP GET request mapping
-- `ModelAndView` — carries both data and view name
-- JSP View Resolver configuration
-- `spring.mvc.view.prefix` and `spring.mvc.view.suffix`
-- Jasper dependency for JSP support in embedded Tomcat
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_UsingMVC
-
----
-
-## 1️⃣6️⃣ Spring Web MVC — Model with String View Name & JSP
-
-### 📌 Concepts Covered
-
-- `Model` object for passing data to view
-- Returning view name as `String` from Controller
-- Cleaner alternative to `ModelAndView`
-- Custom JSP page with CSS styling
-- View Resolver with custom prefix path `/WEB-INF/MyPages/`
-- JSP EL expression `${msg}` for rendering model data
-- Server port configuration
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVCProject_UsingString
-
----
-
-## 1️⃣7️⃣ Spring Web MVC — Model, Map & ModelMap for Data Transfer
-
-### 📌 Concepts Covered
-
-- `Model` interface — `addAttribute()` to pass key-value data to view
-- `Map<String, Object>` interface — `put()` to pass key-value data to view
-- `ModelMap` class — extends `LinkedHashMap`, `addAttribute()` to pass data
-- All three interchangeable — Spring injects `BindingAwareModelMap` internally
-- Passing single object to JSP using `model.addAttribute("obj", user)`
-- Passing multiple objects using `List<User>` to JSP
-- `<c:forEach>` JSTL tag to iterate and render list in JSP table
-- JSP EL expression `${key}` and `${obj.field}` for dynamic rendering
-- `@RequestMapping(value, method)` — class and method level URL mapping
-- Jasper + JSTL dependencies for JSP support
-- Lombok `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` on bean class
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Model_Map_ModelMap
-
----
-
-## 1️⃣8️⃣ Spring Web MVC — HTML Form Handling with @ModelAttribute
-
-### 📌 Concepts Covered
-
-- `@GetMapping` — loads HTML registration form on GET request
-- `@PostMapping` — handles form submission on POST request
-- `@ModelAttribute` — automatically binds HTML form fields to Java object
-- Form field `name` attribute must match Java model field name for auto-binding
-- `Model.addAttribute()` — passes bound object to success JSP page
-- `${empData.field}` — JSP EL expression to render employee data on success page
-- HTML form elements — `input`, `password`, `select`, `textarea`, `submit`
-- `form action="register" method="POST"` — triggers POST mapping
-- Jasper dependency for JSP support in embedded Tomcat
-- Lombok `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` on Employee model
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_EmployeeRegistrationForm
-
----
-
-## 1️⃣9️⃣ Spring Web MVC — Thymeleaf with CSS & JavaScript
-
-### 📌 Concepts Covered
-
-- Thymeleaf as lightweight UI engine — alternative to JSP
-- `spring-boot-starter-thymeleaf` — auto-configures Thymeleaf, no extra properties needed
-- Default prefix `/templates/` and default suffix `.html`
-- `xmlns:th="http://www.thymeleaf.org"` — Thymeleaf namespace declaration
-- `th:text="${key}"` — reads and renders model data in HTML
-- `th:href="@{/path}"` — links external CSS from `/static/` folder
-- `th:src="@{/path}"` — links external JS from `/static/` folder
-- `$` symbol — read data from Model/ModelMap/Map
-- `@` symbol — URL/Path/Location resolution
-- `*` symbol — form input binding (introduced)
-- `static/` folder — stores CSS, JS, images
-- `templates/` folder — stores Thymeleaf HTML view files
-- `@RequestMapping` at class level + `@GetMapping` at method level
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringWebMVC_Project_ThymeLeaf
-
----
-
-## 2️⃣0️⃣ Spring Boot — REST API Basics with @RestController
-
-### 📌 Concepts Covered
-
-- `@RestController` — combination of `@Controller` + `@ResponseBody`
-- Returns **JSON response** directly — no view page needed
-- `@GetMapping` — fetch data, returns JSON list to client
-- `@PostMapping` — receive data from client as JSON
-- `@RequestBody` — automatically converts incoming JSON to Java object
-- Jackson library — handles JSON to Java and Java to JSON conversion
-- `List.of()` — immutable list for static data
-- `new ArrayList<>()` — mutable list for dynamic add/remove
-- Postman — testing GET and POST REST APIs
-- `200 OK` — successful HTTP response status
-- `@Controller` vs `@RestController` — web page vs JSON response
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTBasicProject
-
----
-
-## 2️⃣1️⃣ Spring Boot — REST API with @RequestParam, @PathVariable & ResponseEntity
-
-### 📌 Concepts Covered
-
-- `@RequestParam` — reads data from query string `?key=value`
-- `@PathVariable` — reads data from URL path segments `/{variable}`
-- Difference between `@RequestParam` and `@PathVariable` — when to use which
-- `ResponseEntity<T>` — full control over HTTP response body and status code
-- `HttpStatus.OK` — 200, `HttpStatus.CREATED` — 201, `HttpStatus.NOT_FOUND` — 404
-- `new ResponseEntity<>(body, HttpStatus)` — creating custom HTTP responses
-- `@RequestMapping` at class level + `@GetMapping` at method level
-- URL format difference — `/dataa?pid=10&pname=A` vs `/datab/10/A`
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_RESTPathVariable_EG
-
----
-
-## 2️⃣2️⃣ Spring Boot — @ResponseBody, @JsonProperty & @JsonIgnore in REST API
-
-### 📌 Concepts Covered
-
-- `@ResponseBody` — converts Java object to JSON and writes to HTTP response body
-- `@RequestBody` — converts JSON to Java object from HTTP request body
-- `@RestController` = `@Controller` + `@ResponseBody` — auto-applied to all methods
-- `@JsonProperty("custom-name")` — gives custom key name to field in JSON output
-- `@JsonIgnore` — excludes sensitive field (like password) from JSON response
-- Returning `Object`, `List<T>`, `Map<K,V>` from REST endpoints as JSON
-- `ResponseEntity<T>` — wraps response with body and HTTP status code
-- Jackson — auto-configured library handling all JSON conversions
-- Only JSON supported by default — XML needs extra dependency
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/SpringBoot_ResponseBody
-
----
-
-## 2️⃣3️⃣ Spring Security — Default Behavior, Session ID & CSRF Token
-
-### 📌 Concepts Covered
-
-- Spring Security default behavior — auto login form and auto-generated password
-- Custom credentials via `spring.security.user.name` and `spring.security.user.password`
-- `Authentication` — verifying identity (who you are)
-- `Authorization` — verifying permissions (what you can do)
-- Authenticated ≠ Authorized — key difference
-- Session ID — stateful communication between client and server
-- `JSESSIONID` stored in browser cookie — same per session
-- CSRF Token (Cross-Site Request Forgery) — different per request
-- GET requests accessible without CSRF token
-- POST, PUT, DELETE require CSRF token in request header
-- `HttpServletRequest.getSession().getId()` — exposing Session ID
-- `request.getAttribute("_csrf")` — exposing CSRF Token
-- `401 Unauthorized` vs `403 Forbidden` — difference explained
-- Basic Auth in Postman for testing secured REST APIs
-- 3 ways Spring resolves credentials — Config Class → application.properties → Console default
-
-🔗 Repository Link:  
-https://github.com/jatinsoni08/Spring-Practice/tree/main/01SpringSecurity-BaiscProject
-
----
-
-# 🧱 Technologies Used
-
-- Java 17
-- Spring Core
-- Spring Boot
-- Spring Web MVC
-- Spring Data JPA
-- Hibernate
-- MySQL
-- JSP
-- Thymeleaf
-- Lombok
-- Maven
-
----
-
-# 💡 Key Learning Focus
-
-- Inversion of Control (IoC)
-- Dependency Injection (DI)
-- Spring Container
-- Bean Management
-- XML Configuration
-- Annotation Configuration
-- Component Scanning
-- Autowiring
-- Spring Boot Fundamentals
-- External Configuration
-- YAML Configuration
-- Startup Runners
-- Spring Data JPA
-- Entity Mapping
-- Database Integration
-- Full CRUD Operations
-- Optional Handling
-- Loose Coupling
-- Spring Web MVC Architecture
-- DispatcherServlet & Request Flow
-- ModelAndView & Model
-- JSP View Rendering
-- View Resolver Configuration
-- Thymeleaf UI Engine
-- Static Resource Linking (CSS & JS)
-- JSP vs Thymeleaf
-- REST API Development
-- @RestController & @RequestBody
-- JSON Serialization & Deserialization
-- API Testing with Postman
-
----
-
-# 📈 Learning Approach
-
-- Step-by-step concept building
-- Practical implementation of each topic
-- Concept-first learning
-- Structured mini-projects
-- Real understanding over memorization
-
----
-
-# 🙏 Acknowledgment
-
-A special thanks to Prasoon Bidua Sir and REGex Software Services for making Spring concepts practical, understandable, and industry-oriented through hands-on learning.
+</div>
